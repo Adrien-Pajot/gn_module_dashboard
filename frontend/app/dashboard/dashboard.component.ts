@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 // Services
 import { DataService } from "./services/data.services";
+import { ModuleConfig } from "./../module.config";
+
 
 @Component({
   selector: "dashboard",
@@ -21,6 +23,12 @@ export class DashboardComponent implements OnInit {
   public taxonomies: { [taxLevel: string]: any } = {};
   public yearsMinMax: any;
   public distinctYears = [];
+
+  public showSynthesePerYear = ModuleConfig.AFFICHER_SYNTHESE_PAR_ANNEE;
+  public showSyntheseGeo = ModuleConfig.AFFICHER_SYNTHESE_PAR_ENTITE_GEO;
+  public showSyntheseTaxoRank = ModuleConfig.AFFICHER_SYNTHESE_PAR_RG_TAXO; 
+  public showSyntheseCA = ModuleConfig.AFFICHER_SYNTHESE_PAR_CA; 
+  public showSyntheseTaxoContact = ModuleConfig.AFFICHER_CONTACT_TAXONS;
 
   public showHistogram = false;
   public showMap = false;
